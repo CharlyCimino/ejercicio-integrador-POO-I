@@ -1,0 +1,41 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>350</x><y>50</y><w>300</w><h>130</h></coordinates><panel_attributes>Posnet
+--
+_+ RECARGO_POR_CUOTA: double = 0.03_
+_+ MIN_CANT_CUOTAS: int = 1_
+_+ MAX_CANT_CUOTAS: int = 6_
+--
++ efectuarPago(TarjetaDeCredito, double, int): Ticket
+- datosValidos(TarjetaDeCredito, double, int): boolean
+- recargoSegunCuotas(cantCuotas): double</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>280</y><w>210</w><h>140</h></coordinates><panel_attributes>TarjetaDeCredito
+--
+- entidadBancaria: String
+- numero: String
+- saldo: double
+--
++ tieneSaldoDisponible(double): boolean
++ descontar(double): void
++ nombreCompletoDeTitular(): String
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>330</y><w>120</w><h>80</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+EntidadFinanciera
+--
++ BIRZA
++ CASTERMARD
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>440</x><y>360</y><w>140</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+- entidadFinanciera</panel_attributes><additional_attributes>120;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>510</y><w>160</w><h>130</h></coordinates><panel_attributes>Persona
+--
+- DNI: String
+- nombre: String
+- apellido: String
+- telefono: String
+- mail: String
+--
++ nombreCompleto(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>410</y><w>70</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
+m1=1
+- titular</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>520</x><y>210</y><w>160</w><h>100</h></coordinates><panel_attributes>Ticket
+--
+- nombreApellido: String
+- montoTotal: double
+- montoPorCuota: double
+--
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>370</x><y>170</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>170</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element></diagram>
